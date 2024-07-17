@@ -1,7 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			characters: [],
+			people: [],
 			planets: [],
 			vehicles: [],
 			favorites: [],
@@ -11,7 +11,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				try {
 					let response = await fetch('https://swapi.dev/api/people/');
 					let data = await response.json();
-					setStore({characters:data.results});
+					setStore({people:data.results});
 					return true;
 
 				} catch (error) {

@@ -6,7 +6,7 @@ export const Navbar = () => {
 	const {store, actions} = useContext(Context)
 
 	return (
-		<nav className="navbar navbar-light bg-black mb-3">
+		<nav className="navbar navbar-light bg- mb-3 sticky-top">
 			<Link to="/">
 				<img src="https://img.wattpad.com/story_parts/1342740769/images/175fb48c8dc3ba36903126209410.gif" className="card-img-top" alt="..." style={{height:"4rem", width:"15rem"}}/>
 			</Link>
