@@ -43,17 +43,18 @@ export const DetailedInfo = () => {
 
 	  return (
       <div className="card mb-3 w-75 mx-auto bg-black">
-      <div className="row g-0">
-        <div className="col-md-4">
+      <div className="row g-0 border border-warning px-5 py-2">
+        <div className="col-md-4 d-flex align-items-center justify-content-center">
           <img
             src={imageUrl}
-            className="img-fluid rounded-start h-100"
+            className="img-fluid rounded-circle"
+            style={{ height: 'auto', width: '100%' }}
             alt={itemData.name}
             onError={(e) => (e.target.src = onErrorUrl)}
           />
         </div>
-        <div className="col-md-8">
-          <div className="card-body text-white">
+        <div className="col-md-8 d-flex align-items-center">
+          <div className="card-body text-white m-5">
             <h5 className="card-title">{itemData.name}</h5>
             <div className="card-text ">
               <small className="">{renderCharacteristics()}</small>
