@@ -6,9 +6,9 @@ export const Navbar = () => {
 	const {store, actions} = useContext(Context)
 
 	return (
-		<nav className="navbar navbar-light bg- mb-3 sticky-top">
+		<nav className="navbar navbar-light bg-black opacity-75 mb-3 sticky-top">
 			<Link to="/">
-				<img src="https://img.wattpad.com/story_parts/1342740769/images/175fb48c8dc3ba36903126209410.gif" className="card-img-top" alt="..." style={{height:"4rem", width:"15rem"}}/>
+				<img src="https://img.wattpad.com/story_parts/1342740769/images/175fb48c8dc3ba36903126209410.gif" className="card-img-top border border-warning" alt="..." style={{height:"4rem", width:"15rem"}}/>
 			</Link>
 			<div className="ml-auto">
 				<div className="dropdown">

@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 
-
 export const PlanetsCard = (props) => {
     const {store, actions} = useContext(Context);
     const itemExists = store.favorites.includes(props.name);
@@ -15,10 +14,10 @@ export const PlanetsCard = (props) => {
             <p className="card-text">Population: {props.population}</p>
             <p className="card-text">Terrain: {props.terrain}</p>
             <div className="d-flex justify-content-between align-items-center">
-            <Link to={"/datailed-info/"+props.type+"/"+props.id} className="btn">
-            <img src="https://www.speedybuttons.com/shop/image/421.png" className="card-img-top" alt="..." style={{height:"3rem", width:"3rem"}}/>
-            </Link>
-            <button type="button" className={'btn btn-outline-dark m-auto bg-dark'} onClick={() => { itemExists ? actions.removeFromFavorites(props.name) : actions.addToFavorites(props.name)}}><i className={`bi bi-heart-fill ${itemExists ? 'text-warning' : 'text-light'}`}></i></button>
+                <Link to={"/datailed-info/"+props.type+"/"+props.id} className="btn">
+                    <img src="https://www.speedybuttons.com/shop/image/421.png" className="card-img-top" alt="..." style={{height:"3rem", width:"3rem"}}/>
+                </Link>
+                <button type="button" className={'btn btn-outline-dark m-auto bg-dark'} onClick={() => { itemExists ? actions.removeFromFavorites(props.name) : actions.addToFavorites(props.name)}}><i className={`bi bi-heart-fill ${itemExists ? 'text-warning' : 'text-light'}`}></i></button>
             </div>
         </div>
     </div>
