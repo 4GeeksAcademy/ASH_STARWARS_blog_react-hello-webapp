@@ -7,6 +7,7 @@ import { DetailedInfo } from "./views/detailedInfo";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
+import { AddItems } from "./views/addItems";
 
 //create your first component
 const Layout = () => {
@@ -22,6 +23,7 @@ const Layout = () => {
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/datailed-info/:type/:id" element={<DetailedInfo />} />
+						<Route path="/add-items/" element={<AddItems />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>
 				</ScrollToTop>

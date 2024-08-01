@@ -1,28 +1,24 @@
-import React, { useContext} from "react";
+import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import "../../styles/home.css";
-import { CharacterCard } from "../component/charactersCard";
-import { PlanetsCard } from "../component/planetsCard";
-import { VehiclesCard } from "../component/vehiclesCard";
+import { AddCharacterForm } from "../component/addCharacterForm";
+import { AddPlanetForm } from "../component/addPlanetForm";
+import { AddShipForm } from "../component/addShipForm";
 
-export const Home = () => {
-	const {store} = useContext(Context)
+export const AddItems = () => {
+	const { store, actions } = useContext(Context);
 
-return (
-	<div className="accordion w-75 mx-auto" id="accordionPanelsStayOpenExample">
+	return (
+		<div className="accordion w-75 mx-auto" id="accordionPanelsStayOpenExample">
 		<div className="accordion-item">
 			<h2 className="accordion-header" id="panelsStayOpen-headingOne">
 			<button className="accordion-button collapsed bg-black text-warning" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-				<h3>Characters</h3>
+				<h3>Add New Character</h3>
 			</button>
 			</h2>
 			<div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
 			<div className="accordion-body bg-black">
-				<div className="d-flex overflow-auto">
-					{store.people && store.people.length >0 && store.people.map((item, index) => (
-						<div className="col-auto" key={index}>
-							<CharacterCard id={item.id} type={'people'} index={index} name={item.name} gender={item.gender} hair={item.hair_color} eyes={item.eye_color}/>
-						</div>))}
+				<div className="d-flex overflow-auto justify-content-center">
+					<AddCharacterForm />
 				</div>
 			</div>
 			</div>
@@ -30,16 +26,13 @@ return (
 		<div className="accordion-item">
 			<h2 className="accordion-header" id="panelsStayOpen-headingTwo">
 			<button className="accordion-button collapsed bg-black text-warning" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-				<h3>Planets</h3>
+				<h3>Add New Planet</h3>
 			</button>
 			</h2>
 			<div id="panelsStayOpen-collapseTwo" className="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
 			<div className="accordion-body bg-black">
 				<div className="d-flex overflow-auto">
-					{store.planets && store.planets.length >0 && store.planets.map((item, index) => (
-						<div className="col-auto" key={index}>
-							<PlanetsCard id={item.id} type={item} index={index} name={item.name} population={item.population} terrain={item.terrain}/>
-						</div>))}
+					<AddPlanetForm />
 				</div>
 			</div>
 			</div>
@@ -47,21 +40,18 @@ return (
 		<div className="accordion-item">
 			<h2 className="accordion-header" id="panelsStayOpen-headingThree">
 			<button className="accordion-button collapsed bg-black text-warning" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-				<h3>Vehicles</h3>
+				<h3>Add New Ship</h3>
 			</button>
 			</h2>
 			<div id="panelsStayOpen-collapseThree" className="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
 			<div className="accordion-body bg-black">
 				<div className="d-flex overflow-auto">
-					{store.vehicles && store.vehicles.length >0 && store.vehicles.map((item, index) => (
-						<div className="col-auto" key={index}>
-							<VehiclesCard id={item.id} type={item} index={index} name={item.name} model={item.model} crew={item.crew}/>
-						</div>))}
+					<AddShipForm />
 				</div>
 			</div>
 			</div>
 		</div>
 	</div>
-)
 
+	);
 };

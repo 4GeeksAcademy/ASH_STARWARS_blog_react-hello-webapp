@@ -5,10 +5,11 @@ import { useParams } from "react-router-dom";
 export const DetailedInfo = () => {
 	const {type, id} = useParams();
 	const {store} = useContext(Context)
-
+ 
 	const getItemData = () => {
 		if (!store[type]) return null;
-		const item = store[type].find(item => item.url.split('/')[5] === id);
+		const item = store[type].find(item => item.id === id);
+    console.log('Item:', item);
 		return item;
 	  };
 	

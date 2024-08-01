@@ -7,17 +7,22 @@ export const Navbar = () => {
 
 	return (
 		<nav className="navbar navbar-light bg-black opacity-75 mb-3 sticky-top">
-			<Link to="/">
+			<Link className="m-2" to="/">
 				<img src="https://img.wattpad.com/story_parts/1342740769/images/175fb48c8dc3ba36903126209410.gif" className="card-img-top border border-warning" alt="..." style={{height:"4rem", width:"15rem"}}/>
 			</Link>
 			<div className="ml-auto">
-				<div className="dropdown">
+				<div className="dropdown m-2">
+					<Link className="m-2" to="/add-items">
+					<button className="btn btn-outline-light m-2" type="button" aria-expanded="false">
+						Add New Item
+					</button>
+					</Link>
 					<button className="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 						Favorites: {store.favorites.length}
 					</button>
 					<ul className="dropdown-menu dropdown-menu-end">
 					{store.favorites && store.favorites.length >0 ? (store.favorites.map((item, index) => (
-						<li key={index} className="d-flex align-items-center"><a className="dropdown-item" href="#">{item}</a><button type="button" className="btn btn-outline-dark m-auto" onClick={(e) => {e.stopPropagation(); actions.removeFromFavorites(item)}}><i class="bi bi-trash"></i></button></li>))) 
+						<li key={index} className="d-flex align-items-center"><a className="dropdown-item" href="#">{item}</a><button type="button" className="btn btn-outline-dark m-auto" onClick={(e) => {e.stopPropagation(); actions.removeFromFavorites(item)}}><i className="bi bi-trash"></i></button></li>))) 
 						: (<li><a className="dropdown-item" href="#">(empty)</a></li>)}
 					</ul>
 				</div>
